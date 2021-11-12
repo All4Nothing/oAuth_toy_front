@@ -9,6 +9,39 @@
   "rules": {
     "react/jsx-props-no-spreading": 0,
     "react/react-in-jsx-scope": "off", // allow jsx syntax in js files (for next.js project)
-    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }]
-  }
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+   },
+  "overrides": [
+    {
+      "files": [
+        "**/*.test.jsx",
+        "**/*.test.js"
+      ],
+      "env": {
+        "jest": true // now **/*.test.js files' env has both es6 *and* jest
+      },
+      // Can't extend in overrides: https://github.com/eslint/eslint/issues/8813
+      // "extends": ["plugin:jest/recommended"]
+      "plugins": ["jest"],
+      "rules": {
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error"
+      }
+    }
+  ]
 }

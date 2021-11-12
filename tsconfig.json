@@ -15,6 +15,12 @@
     "jsx": "preserve",
     "incremental": true,
     "noImplicitAny": true, // set 'true' to throw error for 'any'
+    "baseUrl": ".",
+    "paths": {
+      "components/*": ["src/components/*"],
+      "pages/*": ["src/pages/*"],
+      "styles/*": ["src/styles/*"],
+    },
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
