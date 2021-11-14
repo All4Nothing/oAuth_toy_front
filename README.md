@@ -13,11 +13,20 @@
 4. 두분이서 위의 사항을 모두 만족하셨다면, 함께 작업했던 branch에 회고(아래 참고)와 함께 Pull Request를 날려주세요.
 ## 현재 적용된 규칙들
 1. commitlint
-    * commit message의 형태는 다음과 같아야 합니다.
-    * [commit message convention](https://github.com/DevKor-Team/devkor_hackathon_back/blob/develop/.github/COMMIT_MESSAGE_CONVENTION.md)
+    * commit message의 형태는 다음과 같습니다.
+        ```
+        <Type>: Short description
+        ```
+    * 자세한 사항은 다음 문서를 참고해주세요 [commit message convention](https://github.com/DevKor-Team/devkor_hackathon_back/blob/develop/.github/COMMIT_MESSAGE_CONVENTION.md)
+    * 만약 commit message의 포맷이 맞지 않으면, commit이 되지 않습니다.
 2. eslint
     * 이 프로젝트에서는 eslint라고 하는 automatic code formatter를 사용합니다. 
-    * 
+    * eslint plugin이 있으면 잘못된 포맷을 바로바로 빨간줄로 보여줍니다.
+    * lint와 testing은 매 push마다 실행됩니다. 각 단계를 통과하지 못하면 push가 되지 않습니다.
+3. testing
+    * `__test__` 폴더 내에는 test 파일들이 들어갑니다. 
+    * 해당 폴더 내에 test 파일을 작성해주세요.
+    * lint와 testing은 매 push마다 실행됩니다. 각 단계를 통과하지 못하면 push가 되지 않습니다.
 
 ## 해결해야할 핵심 문제들
 <details>
